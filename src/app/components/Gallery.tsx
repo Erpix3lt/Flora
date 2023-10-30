@@ -12,26 +12,18 @@ const GalleryPage = async () => {
     console.log(imageFilenames)
 
     return (
-        <div className="">
-            <div className="">
-                <Gallery images={imageFilenames} />
-            </div>
+        <div>
+            <Gallery images={imageFilenames} />
         </div>
     );
 };
 
 const Gallery = ({ images }: { images: Array<string>; }) => {
-    return <div className="flex flex-row flex-wrap space-x-5 space-y-5">
-        {images.map((el: string) => <Image width={150} height={150} alt={'alt'} src={`/images/${el}`} key={el} />)}
+    return <div className="flex flex-row flex-wrap">
+        {images.map((el: string) => <Image width={230}
+  height={230}
+   className='m-2' alt={'alt'} src={`/images/${el}`} key={el} />)}
     </div>
-}
-
-const Title = ({ Name, Title }: { Name: string, Title: string }) => {
-    return (
-        <h1 className="">
-            {Name} {Title}
-        </h1>
-    )
 }
 
 export default GalleryPage;
